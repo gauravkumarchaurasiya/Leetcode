@@ -1,0 +1,21 @@
+[
+  {
+    "date": "2025-05-26",
+    "leetcode_ids": [
+      "two-sum",
+      "Remove Duplicates from Sorted List",
+      "Remove Duplicates from Sorted List II"
+    ],
+    "description": "Day 1 of #100DaysOfLeetCode\r\n\r\n <br> Pattern: Two Pointer Pattern\r\n\r\nSolved Problems",
+    "tags": [
+      "#DSA",
+      "#100daysOfDSA",
+      "#leetcode"
+    ],
+    "images": [
+      "Screenshot 2025-05-25 100450.png",
+      "Screenshot 2025-05-25 101723.png",
+      "Screenshot 2025-05-25 103336.png"
+    ]
+  }
+]

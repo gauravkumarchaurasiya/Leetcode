@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeetCode Blog Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen font-['Inter']">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">💡</span>
+                    <div class="ml-6 flex space-x-8">
+                        <a href="/static/index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Daily Posts</a>
+                        <a href="/static/blog.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Solutions Blog</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/add-post" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Add Post</a>
+                    <a href="/add-blog" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-indigo-50 hover:bg-indigo-100">Add Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">LeetCode Solutions</h1>
+            <p class="text-gray-600">Detailed solutions and explanations for LeetCode problems</p>
+        </div>
+
+        <div id="blogContainer" class="space-y-8"></div>
+    </main>
+
+    <script>
+        fetch('/static/data/blogs.json')
+            .then(res => res.json())
+            .catch(() => [])
+            .then(blogs => {
+                const container = document.getElementById('blogContainer');
+                blogs.forEach(blog => {
+                    const tags = blog.tags.map(tag => 
+                        `<span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 mr-2">#${tag}</span>`
+                    ).join('');
+                    
+                    const link = `https://leetcode.com/problems/${blog.leetcode_id}/`;
+
+                    const html = `
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <a href="${link}" target="_blank" class="text-xl font-semibold text-indigo-600 hover:text-indigo-800">${blog.title}</a>
+                                    <a href="${link}" target="_blank" class="text-sm text-gray-500 hover:text-gray-700">View Problem ↗</a>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <pre class="overflow-auto text-sm text-gray-800"><code>${blog.python_solution}</code></pre>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2">${tags}</div>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            });
+    </script>
+</body>
+</html>

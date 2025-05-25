@@ -1,0 +1,29 @@
+[
+  {
+    "leetcode_id": "Remove Duplicates from Sorted List II",
+    "title": "Remove Duplicates from Sorted List II",
+    "tags": [
+      "linkedlist",
+      "two-pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:\r\n        dummy = ListNode(0)\r\n        dummy.next = head\r\n\r\n        prev = dummy\r\n        current = head\r\n\r\n        while(current):\r\n            if(current.next and current.val == current.next.val):\r\n                duplicate = current.val\r\n                while(current and current.val == duplicate):\r\n                    current =current.next\r\n\r\n                prev.next = current\r\n            else:\r\n                prev = current\r\n                current=current.next\r\n                \r\n        return dummy.next"
+  },
+  {
+    "leetcode_id": "Remove Duplicates from Sorted List",
+    "title": "Remove Duplicates from Sorted List",
+    "tags": [
+      "linkedlist",
+      "two-pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:\r\n        if not head:\r\n            return None\r\n        \r\n        temp = head\r\n        while( temp and temp.next):\r\n            if(temp.val == temp.next.val):\r\n                temp.next = temp.next.next\r\n\r\n            else:\r\n                temp = temp.next\r\n        return head"
+  },
+  {
+    "leetcode_id": "two-sum",
+    "title": "Two sum using two pointer",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\r\n        nums_with_index = list(enumerate(nums))\r\n        \r\n        nums_with_index.sort(key=lambda x: x[1])\r\n        \r\n        # Two-pointer search\r\n        left = 0\r\n        right = len(nums_with_index) - 1\r\n\r\n        while left < right:\r\n            current_sum = nums_with_index[left][1] + nums_with_index[right][1]\r\n            \r\n            if current_sum == target:\r\n                return [nums_with_index[left][0], nums_with_index[right][0]]  \r\n            elif current_sum < target:\r\n                left += 1\r\n            else:\r\n                right -= 1\r\n\r\n        return []\r\n"
+  }
+]
