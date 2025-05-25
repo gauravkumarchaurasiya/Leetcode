@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
+</head>
+<body>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p><em>Posted on {{ page.date | date: "%B %-d, %Y" }}</em></p>
+    {% if page.screenshot %}
+      <img src="{{ page.screenshot | relative_url }}" alt="Screenshot for {{ page.title }}" style="max-width: 400px;"/>
+    {% endif %}
+    <div>
+      {{ content }}
+    </div>
+    <p><strong>Tags:</strong>
+      {% for tag in page.tags %}
+        <a href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+    </p>
+    <hr />
+    <p><a href="{{ '/' | relative_url }}">Back to Home</a></p>
+  </article>
+</body>
+</html>

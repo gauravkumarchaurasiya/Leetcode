@@ -1,0 +1,11 @@
+title: LeetCode Daily
+description: Daily LeetCode solutions and explanations.
+baseurl: ""          # Set if hosted on custom domain or repo name
+url: "https://gauravkumarchaurasiya.github.io"  # Change accordingly
+
+markdown: kramdown
+theme: minima          # Simple theme, you can customize
+
+collections:
+  posts:
+    output: true
