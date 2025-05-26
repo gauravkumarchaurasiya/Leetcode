@@ -4,18 +4,27 @@
     "leetcode_ids": [
       "two-sum",
       "Remove Duplicates from Sorted List",
-      "Remove Duplicates from Sorted List II"
+      "Remove Duplicates from Sorted List II",
+      "find-the-duplicate-number",
+      "duplicate-zeros",
+      "remove-duplicates-from-sorted-array-ii"
     ],
-    "description": "Day 1 of #100DaysOfLeetCode\r\n\r\n <br> Pattern: Two Pointer Pattern\r\n\r\nSolved Problems",
+    "description": "Day 1 of #100DaysOfLeetCode\r\n\r\n <br> Pattern: Two Pointer Pattern\r\n\r\nSolved Problems\n\nUpdate:\nDay 2 of #100DaysOfLeetCode\r\n<br>\r\n\r\nPattern: Two Pointer Pattern\r\n<br>\r\nSolved Problems",
     "tags": [
       "#DSA",
       "#100daysOfDSA",
-      "#leetcode"
+      "#leetcode",
+      "DSA",
+      "100daysOfDSA",
+      "Leetcode"
     ],
     "images": [
       "Screenshot 2025-05-25 100450.png",
       "Screenshot 2025-05-25 101723.png",
-      "Screenshot 2025-05-25 103336.png"
+      "Screenshot 2025-05-25 103336.png",
+      "20250526_213020_Screenshot 2025-05-26 094529.png",
+      "20250526_213020_Screenshot 2025-05-26 100627.png",
+      "20250526_213020_Screenshot 2025-05-26 212444.png"
     ]
   }
 ]

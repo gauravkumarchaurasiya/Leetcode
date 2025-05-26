@@ -1,5 +1,32 @@
 [
   {
+    "leetcode_id": "remove-duplicates-from-sorted-array-ii",
+    "title": "Remove duplicates from sorted array ii",
+    "tags": [
+      "array",
+      "two-pointer"
+    ],
+    "python_solution": "from typing import List\r\n\r\nclass Solution:\r\n    def removeDuplicates(self, arr: List[int]) -> int:\r\n        if len(arr) <= 2:\r\n            return len(arr)\r\n\r\n        prev = 1  \r\n        count = 1\r\n\r\n        for cur in range(1, len(arr)):\r\n            if arr[cur] == arr[cur - 1]:\r\n                count += 1\r\n            else:\r\n                count = 1 \r\n\r\n            if count <= 2:\r\n                arr[prev] = arr[cur]\r\n                prev += 1\r\n\r\n        return prev\r\n"
+  },
+  {
+    "leetcode_id": "find-the-duplicate-number",
+    "title": "Find the Duplicate Number",
+    "tags": [
+      "array",
+      "two-pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def findDuplicate(self, nums: List[int]) -> int:\r\n        slow = nums[0]\r\n        fast = nums[0]\r\n        while True:\r\n            slow = nums[slow]\r\n            fast = nums[nums[fast]]\r\n            if slow == fast:\r\n                break\r\n        fast = nums[0]\r\n        while slow != fast:\r\n            slow = nums[slow]\r\n            fast = nums[fast]\r\n        return slow"
+  },
+  {
+    "leetcode_id": "duplicate-zeros",
+    "title": "Duplicate Zeros- Two pointer",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def duplicateZeros(self, arr: List[int]) -> None:\r\n        n = len(arr)\r\n        zeros = 0\r\n        \r\n        # Count how many zeros to duplicate within bounds\r\n        for i in range(n):\r\n            if i + zeros >= n - 1:\r\n                # Handle edge zero\r\n                if i + zeros == n - 1 and arr[i] == 0:\r\n                    arr[n - 1] = 0\r\n                    n -= 1  # Do not duplicate this zero\r\n                break\r\n            if arr[i] == 0:\r\n                zeros += 1\r\n        \r\n        # Second pass: go backwards and shift elements\r\n        for i in range(n - 1 - zeros, -1, -1):\r\n            if arr[i] == 0:\r\n                arr[i + zeros] = 0\r\n                zeros -= 1\r\n                arr[i + zeros] = 0\r\n            else:\r\n                arr[i + zeros] = arr[i]\r\n"
+  },
+  {
     "leetcode_id": "Remove Duplicates from Sorted List II",
     "title": "Remove Duplicates from Sorted List II",
     "tags": [
