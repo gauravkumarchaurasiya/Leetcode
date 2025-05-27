@@ -127,17 +127,17 @@ async def submit_post(
         with open(posts_file, "r") as f:
             posts = json.load(f)
 
-    # Check if post for today already exists
-    today_post = next((post for post in posts if post["date"] == today), None)
-    if today_post:
-        # Update existing post
-        today_post["leetcode_ids"].extend(post_data["leetcode_ids"])
-        today_post["description"] += f"\n\nUpdate:\n{post_data['description']}"
-        today_post["tags"].extend(post_data["tags"])
-        today_post["images"].extend(post_data["images"])
-    else:
-        # Add new post
-        posts.insert(0, post_data)
+    # # Check if post for today already exists
+    # today_post = next((post for post in posts if post["date"] == today), None)
+    # if today_post:
+    #     # Update existing post
+    #     today_post["leetcode_ids"].extend(post_data["leetcode_ids"])
+    #     today_post["description"] += f"\n\nUpdate:\n{post_data['description']}"
+    #     today_post["tags"].extend(post_data["tags"])
+    #     today_post["images"].extend(post_data["images"])
+    # else:
+    #     # Add new post
+    posts.insert(0, post_data)
 
     # Save updated posts
     with open(posts_file, "w") as f:

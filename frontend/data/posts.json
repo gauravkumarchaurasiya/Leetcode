@@ -1,5 +1,24 @@
 [
   {
+    "date": "2025-05-27",
+    "leetcode_ids": [
+      "squares-of-a-sorted-array",
+      "3sum",
+      "3sum-closest"
+    ],
+    "description": "Day 3 of #100DaysOfLeetCode\r\nPattern: Two Pointer Pattern\r\n",
+    "tags": [
+      "DSA",
+      "100daysOfDSA",
+      "leetcode"
+    ],
+    "images": [
+      "20250527_213239_Screenshot 2025-05-27 190304.png",
+      "20250527_213239_Screenshot 2025-05-27 201531.png",
+      "20250527_213240_Screenshot 2025-05-27 211851.png"
+    ]
+  },
+  {
     "date": "2025-05-25",
     "leetcode_ids": [
       "two-sum",

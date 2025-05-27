@@ -1,5 +1,32 @@
 [
   {
+    "leetcode_id": "3sum-closest",
+    "title": "3sum-closest",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "from typing import List\r\n\r\nclass Solution:\r\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\r\n        nums.sort()\r\n        closest_sum = nums[0] + nums[1] + nums[2]  \r\n\r\n        for i in range(len(nums) - 2):\r\n            left, right = i + 1, len(nums) - 1\r\n\r\n            while left < right:\r\n                curr_sum = nums[i] + nums[left] + nums[right]\r\n                if curr_sum == target:\r\n                    return curr_sum\r\n\r\n\r\n                if abs(curr_sum - target) < abs(closest_sum - target):\r\n                    closest_sum = curr_sum\r\n\r\n                if curr_sum < target:\r\n                    left += 1\r\n                else:\r\n                    right -= 1\r\n\r\n        return closest_sum"
+  },
+  {
+    "leetcode_id": "3sum",
+    "title": "3sum",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\r\n        nums.sort()\r\n        ans = []\r\n\r\n        for i in range(len(nums)-2):\r\n            if(i>0 and nums[i]==nums[i-1]):\r\n                continue\r\n\r\n            left = i+1\r\n            right = len(nums)-1\r\n            target = -nums[i]\r\n            while(left<right):\r\n                if(nums[left]+nums[right]==target):\r\n                    ans.append([nums[i],nums[left],nums[right]])\r\n                    \r\n                    # Skip duplicates for left pointer\r\n                    while left < right and nums[left] == nums[left + 1]:\r\n                        left += 1\r\n                    # Skip duplicates for right pointer\r\n                    while left < right and nums[right] == nums[right - 1]:\r\n                        right -= 1\r\n\r\n                    left += 1\r\n                    right -= 1\r\n\r\n                elif(nums[left]+nums[right] < target):\r\n                    left+=1\r\n                else:\r\n                    right -=1\r\n                \r\n        return ans"
+  },
+  {
+    "leetcode_id": "squares-of-a-sorted-array",
+    "title": "Squares of a sorted array",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def sortedSquares(self, nums: List[int]) -> List[int]:\r\n        left = 0\r\n        right = len(nums)-1\r\n        ans = [0]*len(nums)\r\n        i = right\r\n        while(left<=right):\r\n            if(abs(nums[left])>abs(nums[right])):\r\n                ans[i]= nums[left]**2\r\n                left+=1\r\n            else:\r\n                ans[i]=nums[right]**2\r\n                right-=1\r\n            i-=1\r\n        return ans"
+  },
+  {
     "leetcode_id": "remove-duplicates-from-sorted-array-ii",
     "title": "Remove duplicates from sorted array ii",
     "tags": [
