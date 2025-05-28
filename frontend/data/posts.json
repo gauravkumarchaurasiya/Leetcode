@@ -1,5 +1,23 @@
 [
   {
+    "date": "2025-05-28",
+    "leetcode_ids": [
+      "3sum-smaller",
+      "subarray-product-less-than-k",
+      "4-sum"
+    ],
+    "description": "Day 4 of #100DaysOfLeetCode\r\nPattern: Two Pointer Pattern",
+    "tags": [
+      "array",
+      "two pointer",
+      "sliding window"
+    ],
+    "images": [
+      "20250528_225801_Screenshot 2025-05-28 223127.png",
+      "20250528_225802_Screenshot 2025-05-28 224119.png"
+    ]
+  },
+  {
     "date": "2025-05-27",
     "leetcode_ids": [
       "squares-of-a-sorted-array",
