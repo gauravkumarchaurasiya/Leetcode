@@ -1,5 +1,23 @@
 [
   {
+    "leetcode_id": "backspace-string-compare",
+    "title": "Backspace string compare",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def backspaceCompare(self, s: str, t: str) -> bool:\r\n        def nxt(st, i):\r\n            skip = 0\r\n            while i >= 0:\r\n                if st[i] == '#':\r\n                    skip += 1\r\n                    i -= 1\r\n                elif skip > 0:\r\n                    skip -= 1\r\n                    i -= 1\r\n                else:\r\n                    break\r\n            return i\r\n\r\n        i, j = len(s) - 1, len(t) - 1\r\n\r\n        while i >= 0 or j >= 0:\r\n            i = nxt(s, i)\r\n            j = nxt(t, j)\r\n\r\n            if i >= 0 and j >= 0:\r\n                if s[i] != t[j]:\r\n                    return False\r\n            elif i >= 0 or j >= 0:\r\n                return False\r\n\r\n            i -= 1\r\n            j -= 1\r\n\r\n        return True"
+  },
+  {
+    "leetcode_id": "shortest-unsorted-continuous-subarray",
+    "title": "Shortest unsorted continuous subarray",
+    "tags": [
+      "array",
+      "two pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def findUnsortedSubarray(self, nums):\r\n        n = len(nums)\r\n        max_seen = float('-inf')\r\n        min_seen = float('inf')\r\n        left, right = 0, -1\r\n\r\n        for i in range(n):\r\n            if nums[i] >= max_seen:\r\n                max_seen = nums[i]\r\n            else:\r\n                right = i\r\n\r\n        for i in range(n - 1, -1, -1):\r\n            if nums[i] <= min_seen:\r\n                min_seen = nums[i]\r\n            else:\r\n                left = i\r\n\r\n        return right - left + 1"
+  },
+  {
     "leetcode_id": "4-Sum",
     "title": "4 Sum",
     "tags": [
