@@ -1,5 +1,23 @@
 [
   {
+    "leetcode_id": "linked-list-cycle-ii",
+    "title": "Linked-list-cycle-ii",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, x):\r\n#         self.val = x\r\n#         self.next = None\r\n\r\nclass Solution:\r\n    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:\r\n        slow,fast = head,head\r\n        while fast != None and fast.next!= None:\r\n            fast = fast.next.next\r\n            slow = slow.next\r\n            if slow == fast:\r\n                cur = head\r\n                while cur != slow:\r\n                    cur = cur.next\r\n                    slow= slow.next\r\n                return slow"
+  },
+  {
+    "leetcode_id": "linked-list-cycle",
+    "title": "Linked list cycle",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, x):\r\n#         self.val = x\r\n#         self.next = None\r\n\r\nclass Solution:\r\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\r\n        slow,fast = head,head\r\n        while fast is not None and fast.next is not None:\r\n            fast = fast.next.next\r\n            slow = slow.next \r\n            if fast == slow:\r\n                return True\r\n            \r\n        return False"
+  },
+  {
     "leetcode_id": "backspace-string-compare",
     "title": "Backspace string compare",
     "tags": [

@@ -1,5 +1,22 @@
 [
   {
+    "date": "2025-05-30",
+    "leetcode_ids": [
+      "linked-list-cycle",
+      "linked-list-cycle-ii"
+    ],
+    "description": "Day 6 of #100DaysOfLeetCode\r\nPattern: slow-fast pointers Pattern",
+    "tags": [
+      "dsa",
+      "leetcode",
+      "slow-fast pointer"
+    ],
+    "images": [
+      "20250530_221157_Screenshot 2025-05-30 214736.png",
+      "20250530_221157_Screenshot 2025-05-30 220745.png"
+    ]
+  },
+  {
     "date": "2025-05-29",
     "leetcode_ids": [
       "dutch-national-flag-sorting-problem",
