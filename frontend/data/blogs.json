@@ -1,5 +1,41 @@
 [
   {
+    "leetcode_id": "reorder-list",
+    "title": "Reorder-list",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def reorderList(self, head: Optional[ListNode]) -> None:\r\n        if not head or not head.next:\r\n            return\r\n\r\n        # Step 1: Find middle using slow and fast pointers\r\n        slow, fast = head, head\r\n        while fast and fast.next:\r\n            slow = slow.next\r\n            fast = fast.next.next\r\n\r\n        # Step 2: Reverse second half\r\n        prev = None\r\n        curr = slow.next\r\n        slow.next = None  # Cut off first half\r\n\r\n        while curr:\r\n            next_node = curr.next\r\n            curr.next = prev\r\n            prev = curr\r\n            curr = next_node\r\n\r\n        # Step 3: Merge two halves\r\n        first, second = head, prev\r\n        while second:\r\n            tmp1, tmp2 = first.next, second.next\r\n            first.next = second\r\n            second.next = tmp1\r\n            first, second = tmp1, tmp2"
+  },
+  {
+    "leetcode_id": "palindrome-linked-list",
+    "title": "Palindrome-linked-list",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def isPalindrome(self, head: Optional[ListNode]) -> bool:\r\n        # Step 1: Find middle\r\n        slow = fast = head\r\n        while fast and fast.next:\r\n            slow = slow.next\r\n            fast = fast.next.next\r\n\r\n        # Step 2: Reverse second half\r\n        prev = None\r\n        while slow:\r\n            next_node = slow.next\r\n            slow.next = prev\r\n            prev = slow\r\n            slow = next_node\r\n\r\n        # Step 3: Compare halves\r\n        left, right = head, prev\r\n        while right:\r\n            if left.val != right.val:\r\n                return False\r\n            left = left.next\r\n            right = right.next\r\n\r\n        return True"
+  },
+  {
+    "leetcode_id": "happy-number",
+    "title": "Happy number",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "class Solution:\r\n    def isHappy(self, n: int) -> bool:\r\n        def sqsum(n):\r\n            # sqsum = sum(int(x)**2 for x in str(n))\r\n            # return sqsum\r\n            s = 0\r\n            while(n):\r\n                s+= (n%10)**2\r\n                n//=10\r\n\r\n            return s\r\n\r\n        slow = n\r\n        fast = sqsum(n)\r\n        while fast!=1 and slow!=fast :\r\n            slow = sqsum(slow)\r\n            fast = sqsum(sqsum(fast))\r\n\r\n        return fast==1"
+  },
+  {
+    "leetcode_id": "middle-of-the-linked-list",
+    "title": "Middle-of-the-linked-list",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\r\n        slow = head\r\n        fast = head\r\n        while(fast!=None and fast.next!=None):\r\n            slow = slow.next\r\n            fast = fast.next.next\r\n\r\n        return slow"
+  },
+  {
     "leetcode_id": "linked-list-cycle-ii",
     "title": "Linked-list-cycle-ii",
     "tags": [
