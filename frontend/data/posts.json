@@ -1,5 +1,21 @@
 [
   {
+    "date": "2025-06-01",
+    "leetcode_ids": [
+      "reverse-linked-list",
+      "fruit-into-baskets"
+    ],
+    "description": "Day 8 of #100DaysOfLeetCode\r\nPattern: slow-fast pointers and sliding windowPatterns",
+    "tags": [
+      "slow-fast pointer",
+      "sliding window"
+    ],
+    "images": [
+      "20250601_233256_Screenshot 2025-06-01 232540.png",
+      "20250601_233256_Screenshot 2025-06-01 233247.png"
+    ]
+  },
+  {
     "date": "2025-05-31",
     "leetcode_ids": [
       "middle-of-the-linked-list",

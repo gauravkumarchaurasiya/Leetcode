@@ -1,5 +1,22 @@
 [
   {
+    "leetcode_id": "fruit-into-baskets",
+    "title": "Fruit-into-baskets",
+    "tags": [
+      "sliding window"
+    ],
+    "python_solution": "class Solution:\r\n    def totalFruit(self, fruits: List[int]) -> int:\r\n        fruit_count = defaultdict(int)\r\n        left = 0\r\n        max_fruits = 0\r\n\r\n        for right in range(len(fruits)):\r\n            fruit_count[fruits[right]] += 1\r\n\r\n            while len(fruit_count) > 2:\r\n                fruit_count[fruits[left]] -= 1\r\n                if fruit_count[fruits[left]] == 0:\r\n                    del fruit_count[fruits[left]]\r\n                left += 1\r\n\r\n            max_fruits = max(max_fruits, right - left + 1)\r\n\r\n        return max_fruits"
+  },
+  {
+    "leetcode_id": "reverse-linked-list",
+    "title": "Reverse-linked-list",
+    "tags": [
+      "linkedlist",
+      "slow-fast pointer"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\r\n        prev = None\r\n        curr = head\r\n        while curr:\r\n            next_node = curr.next\r\n            curr.next = prev\r\n            prev = curr\r\n            curr = next_node\r\n        return prev\r\n"
+  },
+  {
     "leetcode_id": "reorder-list",
     "title": "Reorder-list",
     "tags": [
