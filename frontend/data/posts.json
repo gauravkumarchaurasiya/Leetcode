@@ -1,5 +1,20 @@
 [
   {
+    "date": "2025-06-02",
+    "leetcode_ids": [
+      "rotate-list",
+      "reverse-linked-list-ii"
+    ],
+    "description": "Day 9 of #100DaysOfLeetCode\r\nPattern: In-place Reversal of a LinkedList",
+    "tags": [
+      "In-place Reversal of a LinkedList"
+    ],
+    "images": [
+      "20250602_234200_Screenshot 2025-06-02 225747.png",
+      "20250602_234200_Screenshot 2025-06-02 233743.png"
+    ]
+  },
+  {
     "date": "2025-06-01",
     "leetcode_ids": [
       "reverse-linked-list",

@@ -1,5 +1,21 @@
 [
   {
+    "leetcode_id": "reverse-linked-list-ii",
+    "title": "Reverse-linked-list-ii",
+    "tags": [
+      "In-place Reversal of a LinkedList"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:\r\n        if not head or left == right:\r\n            return head\r\n        \r\n        # Create a dummy node to make handling the head of the list easier\r\n        dummy = ListNode(0)\r\n        dummy.next = head\r\n        prev = dummy\r\n\r\n        # Move `prev` to the node just before the left position\r\n        for _ in range(left - 1):\r\n            prev = prev.next\r\n\r\n        # The first node of the sublist that will be reversed\r\n        curr = prev.next\r\n\r\n        # Reverse the sublist from left to right\r\n        for _ in range(right - left):\r\n            temp = curr.next\r\n            curr.next = temp.next\r\n            temp.next = prev.next\r\n            prev.next = temp\r\n\r\n        return dummy.next\r\n            "
+  },
+  {
+    "leetcode_id": "rotate-list",
+    "title": "Rotate-list",
+    "tags": [
+      "In-place Reversal of a LinkedList"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\r\n        if not head or not head.next or k == 0:\r\n            return head\r\n\r\n        length = 1\r\n        tail = head\r\n        while tail.next:\r\n            tail = tail.next\r\n            length += 1\r\n\r\n        k = k % length\r\n        if k == 0:\r\n            return head\r\n\r\n        new_tail = head\r\n        for _ in range(length - k - 1):\r\n            new_tail = new_tail.next\r\n\r\n        new_head = new_tail.next\r\n        new_tail.next = None\r\n        tail.next = head\r\n\r\n        return new_head"
+  },
+  {
     "leetcode_id": "fruit-into-baskets",
     "title": "Fruit-into-baskets",
     "tags": [
