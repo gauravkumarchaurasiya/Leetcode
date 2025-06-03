@@ -1,5 +1,22 @@
 [
   {
+    "leetcode_id": "valid-parentheses",
+    "title": "Valid-parentheses",
+    "tags": [
+      "stack"
+    ],
+    "python_solution": "class Solution:\r\n    def isValid(self, s: str) -> bool:\r\n        stack = []\r\n        mapping = {')': '(', ']': '[', '}': '{'}\r\n        \r\n        for char in s:\r\n            if char in mapping:\r\n                top = stack.pop() if stack else '#'\r\n                if mapping[char] != top:\r\n                    return False\r\n            else:\r\n                stack.append(char)\r\n                \r\n        return not stack"
+  },
+  {
+    "leetcode_id": "rotate-list",
+    "title": "Rotate-list",
+    "tags": [
+      "In-place Reversal of a LinkedList",
+      "linkedlist"
+    ],
+    "python_solution": "# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, val=0, next=None):\r\n#         self.val = val\r\n#         self.next = next\r\nclass Solution:\r\n    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\r\n        if not head or k == 0:\r\n            return head\r\n\r\n        length = 1\r\n        tail = head\r\n        while tail.next:\r\n            tail = tail.next\r\n            length += 1\r\n\r\n        k = k % length\r\n        if k == 0:\r\n            return head\r\n\r\n        split = length - k\r\n        prev = None\r\n        curr = head\r\n        for _ in range(split):\r\n            prev = curr\r\n            curr = curr.next\r\n\r\n        prev.next = None\r\n\r\n        def reverse_list(start, end=None):\r\n            prev = None\r\n            while start != end:\r\n                nxt = start.next\r\n                start.next = prev\r\n                prev = start\r\n                start = nxt\r\n            return prev\r\n\r\n        first = reverse_list(head)\r\n        second = reverse_list(curr)\r\n\r\n        temp = first\r\n        while temp.next:\r\n            temp = temp.next\r\n        temp.next = second\r\n\r\n        return reverse_list(first)"
+  },
+  {
     "leetcode_id": "reverse-linked-list-ii",
     "title": "Reverse-linked-list-ii",
     "tags": [
