@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "longest-substring-without-repeating-characters",
+    "title": "Longest-substring-without-repeating-characters",
+    "tags": [
+      "sliding window"
+    ],
+    "python_solution": "class Solution:\r\n    def lengthOfLongestSubstring(self, s: str) -> int:\r\n        seen_chars = {}\r\n        left = 0\r\n        max_length = 0\r\n\r\n        for right in range(len(s)):\r\n            if s[right] in seen_chars and seen_chars[s[right]] >= left:\r\n                left = seen_chars[s[right]] + 1\r\n            seen_chars[s[right]] = right\r\n            max_length = max(max_length, right - left + 1)\r\n        \r\n        return max_length"
+  },
+  {
     "leetcode_id": "valid-parentheses",
     "title": "Valid-parentheses",
     "tags": [

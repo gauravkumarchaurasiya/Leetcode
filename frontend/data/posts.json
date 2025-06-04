@@ -1,5 +1,18 @@
 [
   {
+    "date": "2025-06-04",
+    "leetcode_ids": [
+      "longest-substring-without-repeating-characters"
+    ],
+    "description": "Day 11 of #100DaysOfLeetCode\r\nPattern: sliding window",
+    "tags": [
+      "sliding window"
+    ],
+    "images": [
+      "20250604_214502_Screenshot 2025-06-04 214340.png"
+    ]
+  },
+  {
     "date": "2025-06-03",
     "leetcode_ids": [
       "rotate-list",
