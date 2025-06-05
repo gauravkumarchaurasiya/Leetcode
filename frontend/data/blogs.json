@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "missing-number",
+    "title": "Missing-number",
+    "tags": [
+      "cyclic sort"
+    ],
+    "python_solution": "from typing import List\r\n\r\nclass Solution:\r\n    def missingNumber(self, nums: List[int]) -> int:\r\n        n = len(nums)\r\n        i = 0\r\n\r\n        while i < n:\r\n            correct_index = nums[i]\r\n            # Only swap if the number is within the valid index range (0 to n - 1)\r\n            if nums[i] < n and nums[i] != nums[correct_index]:\r\n                nums[i], nums[correct_index] = nums[correct_index], nums[i]\r\n            else:\r\n                i += 1\r\n\r\n        # After sorting, find the first index where nums[i] != i\r\n        for i in range(n):\r\n            if nums[i] != i:\r\n                return i\r\n\r\n        # If all indices match, the missing number is n\r\n        return n\r\n"
+  },
+  {
     "leetcode_id": "longest-substring-without-repeating-characters",
     "title": "Longest-substring-without-repeating-characters",
     "tags": [
