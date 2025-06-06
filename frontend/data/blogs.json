@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "find-all-numbers-disappeared-in-an-array",
+    "title": "find-all-numbers-disappeared-in-an-array",
+    "tags": [
+      "merge intervals approach"
+    ],
+    "python_solution": "class Solution:\r\n    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:\r\n        n = len(nums)\r\n        \r\n        # Step 1: Convert nums into intervals [num, num]\r\n        intervals = [[num, num] for num in nums]\r\n        intervals.sort()  # Sort by the start of the interval\r\n\r\n        # Step 2: Merge overlapping intervals\r\n        merged = []\r\n        for interval in intervals:\r\n            if not merged or merged[-1][1] < interval[0]:\r\n                merged.append(interval)\r\n            else:\r\n                merged[-1][1] = max(merged[-1][1], interval[1])\r\n\r\n        # Step 3: Find missing numbers in the range [1, n]\r\n        missing = []\r\n        prev_end = 0\r\n        for start, end in merged:\r\n            if start > prev_end + 1:\r\n                missing.extend(range(prev_end + 1, start))\r\n            prev_end = max(prev_end, end)\r\n        \r\n        # Step 4: Check if there are missing numbers after the last interval\r\n        if prev_end < n:\r\n            missing.extend(range(prev_end + 1, n + 1))\r\n\r\n        return missing"
+  },
+  {
     "leetcode_id": "missing-number",
     "title": "Missing-number",
     "tags": [
