@@ -1,5 +1,20 @@
 [
   {
+    "date": "2025-06-07",
+    "leetcode_ids": [
+      "GFG - max-sum-subarray-of-size-k5313",
+      "longest-repeating-character-replacement"
+    ],
+    "description": "Day 14 of #100DaysOfLeetCode\r\nPattern: sliding window",
+    "tags": [
+      "sliding window"
+    ],
+    "images": [
+      "20250607_230612_Screenshot 2025-06-07 113239.png",
+      "20250607_230612_Screenshot 2025-06-07 230317.png"
+    ]
+  },
+  {
     "date": "2025-06-06",
     "leetcode_ids": [
       "find-all-numbers-disappeared-in-an-array"

@@ -1,5 +1,21 @@
 [
   {
+    "leetcode_id": "GFG - max-sum-subarray-of-size-k5313",
+    "title": "max-sum-subarray-of-size-k",
+    "tags": [
+      "sliding window"
+    ],
+    "python_solution": "#User function Template for python3\r\nclass Solution:\r\n    def maximumSumSubarray (self,arr,k):\r\n        # code here \r\n        n = len(arr)\r\n        if(n<k):\r\n            return None\r\n            \r\n        win_sum = sum(arr[:k])\r\n        max_sum = win_sum\r\n        \r\n        for i in range(k,n):\r\n            win_sum += arr[i]- arr[i-k]\r\n            max_sum = max(max_sum,win_sum)\r\n            \r\n        return max_sum\r\n        "
+  },
+  {
+    "leetcode_id": "longest-repeating-character-replacement",
+    "title": "longest-repeating-character-replacement",
+    "tags": [
+      "sliding window"
+    ],
+    "python_solution": "class Solution:\r\n    def characterReplacement(self, s: str, k: int) -> int:\r\n        count = defaultdict(int)\r\n        max_freq = 0\r\n        left = 0\r\n        max_length = 0\r\n\r\n        for right in range(len(s)):\r\n            count[s[right]] += 1\r\n            max_freq = max(max_freq, count[s[right]])\r\n\r\n            if (right - left + 1) - max_freq > k:\r\n                count[s[left]] -= 1\r\n                left += 1\r\n\r\n            max_length = max(max_length, right - left + 1)\r\n\r\n        return max_length"
+  },
+  {
     "leetcode_id": "find-all-numbers-disappeared-in-an-array",
     "title": "find-all-numbers-disappeared-in-an-array",
     "tags": [
