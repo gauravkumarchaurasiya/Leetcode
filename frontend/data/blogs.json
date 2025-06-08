@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "next-greater-element-i",
+    "title": "next-greater-element-i",
+    "tags": [
+      "stack"
+    ],
+    "python_solution": "class Solution:\r\n    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:\r\n        stack = []\r\n        next_greater = {}\r\n\r\n        for num in nums2:\r\n            while stack and num > stack[-1]:\r\n                prev = stack.pop()\r\n                next_greater[prev] = num\r\n            stack.append(num)\r\n\r\n        # The rest in stack have no next greater\r\n        for num in stack:\r\n            next_greater[num] = -1\r\n\r\n        return [next_greater[num] for num in nums1]"
+  },
+  {
     "leetcode_id": "GFG - max-sum-subarray-of-size-k5313",
     "title": "max-sum-subarray-of-size-k",
     "tags": [

@@ -1,5 +1,18 @@
 [
   {
+    "date": "2025-06-08",
+    "leetcode_ids": [
+      "next-greater-element-i"
+    ],
+    "description": "Day 15 of #100DaysOfLeetCode\r\nPattern: stack",
+    "tags": [
+      "stack"
+    ],
+    "images": [
+      "20250608_224422_Screenshot 2025-06-08 224411.png"
+    ]
+  },
+  {
     "date": "2025-06-07",
     "leetcode_ids": [
       "GFG - max-sum-subarray-of-size-k5313",
