@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "simplify-path",
+    "title": "simplify-path",
+    "tags": [
+      "stack"
+    ],
+    "python_solution": "class Solution:\r\n    def simplifyPath(self, path: str) -> str:\r\n        components = path.split('/')\r\n        stack = []\r\n        \r\n        for component in components:\r\n            if component == '' or component == '.':\r\n                continue\r\n            elif component == '..':\r\n                if stack:\r\n                    stack.pop()\r\n            else:\r\n                stack.append(component)\r\n        \r\n        return '/' + '/'.join(stack)"
+  },
+  {
     "leetcode_id": "next-greater-element-i",
     "title": "next-greater-element-i",
     "tags": [
