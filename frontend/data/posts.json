@@ -1,5 +1,18 @@
 [
   {
+    "date": "2025-06-10",
+    "leetcode_ids": [
+      "next-greater-element-ii"
+    ],
+    "description": "Day 17 of #100DaysOfLeetCode\r\nPattern: stack",
+    "tags": [
+      "stack"
+    ],
+    "images": [
+      "20250610_233821_Screenshot 2025-06-10 233645.png"
+    ]
+  },
+  {
     "date": "2025-06-09",
     "leetcode_ids": [
       "simplify-path"

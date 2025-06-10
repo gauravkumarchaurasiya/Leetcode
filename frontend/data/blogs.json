@@ -1,5 +1,13 @@
 [
   {
+    "leetcode_id": "next-greater-element-ii",
+    "title": "next-greater-element-ii",
+    "tags": [
+      "stack"
+    ],
+    "python_solution": "class Solution:\r\n    def nextGreaterElements(self, nums: List[int]) -> List[int]:\r\n        n = len(nums)\r\n        result = [-1] * n\r\n        stack = []\r\n        \r\n        for i in range(2 * n):\r\n            while stack and nums[stack[-1]] < nums[i % n]:\r\n                index = stack.pop()\r\n                result[index] = nums[i % n]\r\n            \r\n            if i < n:\r\n                stack.append(i)\r\n        \r\n        return result"
+  },
+  {
     "leetcode_id": "simplify-path",
     "title": "simplify-path",
     "tags": [
